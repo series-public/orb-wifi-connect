@@ -77,10 +77,10 @@ jobs:
           name: Get the username associated with the GitHub token
           command: |
             USER_URL=https://api.github.com/user
-            echo "GITHUB_TOKEN=$GITHUB_TOKEN"
             GITHUB_TOKEN_USER=$(curl -s -H "Authorization: token $GITHUB_TOKEN" "$USER_URL" | jq -r .login)
             echo "GITHUB_TOKEN_USER=$GITHUB_TOKEN_USER"
             echo "export GITHUB_TOKEN_USER=$GITHUB_TOKEN_USER" >> $BASH_ENV
+            echo "export GITHUB_TOKEN=$GITHUB_TOKEN" >> $BASH_ENV
 
       - run:
           name: Test whether the username was retrieved successfully
