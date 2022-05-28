@@ -24,9 +24,8 @@ export const Notifications = ({
 			)}
 			{!hasAvailableNetworks && (
 				<Alert m={2} warning>
-					<Txt.span>No wifi networks available.&nbsp;</Txt.span>
 					<Txt.span>
-						Please ensure there is a network within range and reboot the device.
+						No wifi networks available. Click 'Rescan' to search again.
 					</Txt.span>
 				</Alert>
 			)}
